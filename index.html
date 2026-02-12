@@ -81,7 +81,128 @@
         <p>
             El Victoria's Secret Fashion Show (en español, 'desfile de modas de Victoria's Secret') es un evento promocional anual patrocinado y presentado por Victoria's Secret, una reconocida marca de lencería.
         </p>
-    </section>
+    </section><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Desfile Interactivo de Moda</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  background-color: #ffe6f2;
+}
+
+.modelo {
+  font-size: 90px;
+  margin: 20px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.estrellas {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.contador {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.reaccion {
+  margin-top: 10px;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>👗 Desfile Interactivo 👠</h1>
+<p>Elige outfit completo y consigue la mejor puntuación</p>
+
+<div class="modelo" id="modelo">👩</div>
+
+<h3>Ropa</h3>
+<button onclick="elegirRopa('👗')">Vestido</button>
+<button onclick="elegirRopa('👖')">Pantalón</button>
+
+<h3>Zapatos</h3>
+<button onclick="elegirZapatos('👠')">Tacones</button>
+<button onclick="elegirZapatos('👟')">Deportivas</button>
+
+<h3>Peinado</h3>
+<button onclick="elegirPelo('💇‍♀️')">Pelo Corto</button>
+<button onclick="elegirPelo('👱‍♀️')">Pelo Largo</button>
+
+<br><br>
+<button onclick="evaluar()">⭐ Desfilar</button>
+
+<div class="estrellas" id="resultado"></div>
+<div class="reaccion" id="reaccion"></div>
+<div class="contador">Puntos totales: <span id="total">0</span></div>
+
+<script>
+let ropa = "";
+let zapatos = "";
+let pelo = "";
+let puntosTotales = 0;
+
+function actualizarModelo() {
+  document.getElementById('modelo').innerHTML = pelo + ropa + zapatos;
+}
+
+function elegirRopa(r) {
+  ropa = r;
+  actualizarModelo();
+}
+
+function elegirZapatos(z) {
+  zapatos = z;
+  actualizarModelo();
+}
+
+function elegirPelo(p) {
+  pelo = p;
+  actualizarModelo();
+}
+
+function evaluar() {
+  if (ropa === "" || zapatos === "" || pelo === "") {
+    alert("¡Completa todo el outfit!");
+    return;
+  }
+
+  let puntuacion = Math.floor(Math.random() * 5) + 1;
+  let estrellas = "";
+
+  for (let i = 0; i < puntuacion; i++) {
+    estrellas += "⭐";
+  }
+
+  puntosTotales += puntuacion;
+
+  let reaccionTexto = "";
+
+  if (puntuacion <= 2) reaccionTexto = "😅 El público no está muy convencido...";
+  if (puntuacion == 3) reaccionTexto = "🙂 Buen intento, sigue mejorando.";
+  if (puntuacion >= 4) reaccionTexto = "🎉 ¡El público aplaude con emoción!";
+
+  document.getElementById('resultado').innerHTML = "Puntuación: " + estrellas;
+  document.getElementById('reaccion').innerHTML = reaccionTexto;
+  document.getElementById('total').innerHTML = puntosTotales;
+}
+</script>
+
+</body>
+</html>
+
 
     <section id="contacto">
         <h2>Contacto</h2>
@@ -95,4 +216,5 @@
 </body>
 
 </html>
+
 
