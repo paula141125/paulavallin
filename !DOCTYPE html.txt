@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Up - Mi Espacio</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+        color: #444;
+    }
+
+    header {
+        background-color: #ff99cc;
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+
+    nav {
+        text-align: center;
+        padding: 15px;
+        background-color: #ffd6eb;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #cc0066;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h2 {
+        color: #e60073;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #ff99cc;
+        color: white;
+        margin-top: 40px;
+    }
+
+    button {
+        background-color: #ff66a3;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #e60073;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>✨ Glow Up ✨</h1>
+    <p>Autoestima y bienestar en 2º de Bachillerato</p>
+</header>
+
+<nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#tips">Tips</a>
+    <a href="#motivacion">Motivación</a>
+</nav>
+
+<section id="sobre-mi">
+    <h2>💖 Sobre este proyecto</h2>
+    <div class="card">
+        <p>
+            Este proyecto trata sobre la importancia del bienestar emocional en una etapa tan intensa como 2º de Bachillerato.
+            Entre exámenes, presión y decisiones sobre el futuro, es fundamental cuidarnos y mantener una autoestima sana.
+        </p>
+    </div>
+</section>
+
+<section id="tips">
+    <h2>🌷 Tips para sobrevivir (y brillar)</h2>
+    <div class="card">
+        <ul>
+            <li>Organiza tu tiempo con un planner bonito 📝</li>
+            <li>Duerme al menos 7-8 horas 😴</li>
+            <li>Rodéate de personas que te apoyen 💕</li>
+            <li>Haz descansos y date pequeños premios 🎀</li>
+        </ul>
+    </div>
+</section>
+
+<section id="motivacion">
+    <h2>✨ Un mensaje para ti</h2>
+    <div class="card">
+        <p id="frase">Haz clic para recibir tu dosis de motivación 💌</p>
+        <button onclick="cambiarFrase()">Motívame</button>
+    </div>
+</section>
+
+<footer>
+    <p>Proyecto TDA - 2º Bachillerato | Hecho con 💗</p>
+</footer>
+
+<script>
+function cambiarFrase() {
+    const frases = [
+        "Eres más capaz de lo que crees 💫",
+        "Un mal día no define tu futuro 🌈",
+        "Paso a paso también es progreso 🌷",
+        "Confía en ti, lo estás haciendo genial 👑"
+    ];
+    const random = Math.floor(Math.random() * frases.length);
+    document.getElementById("frase").innerText = frases[random];
+}
+</script>
+
+</body>
+</html>
